@@ -28,8 +28,8 @@ import java.lang.annotation.RetentionPolicy
 import java.lang.annotation.Target
 
 /**
- * The annotation injects a call to either the default handler(@see com.virtualdogbert.ControllerEnhancer.#errorsHandler())
- * or one specified by name using the handler parameter.
+ * The annotation injects a getter for a config property so that if it's updated you get the latest value, so like
+ * @value but dynamic by default. If the optional stat variable is set true then the appropriate @value is injected.
  */
 @Retention(RetentionPolicy.SOURCE)
 @Target([ElementType.FIELD])
