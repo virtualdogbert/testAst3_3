@@ -62,6 +62,11 @@ dependencies {
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
 }
 
+//comment in to do remote debugging for AST transforms:
+//compileGroovy.groovyOptions.forkOptions.jvmArgs  = ['-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005']
+//compileTestGroovy.groovyOptions.forkOptions.jvmArgs = ['-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005']
+
+
 bootRun {
     jvmArgs('-Dspring.output.ansi.enabled=always')
     addResources = true
