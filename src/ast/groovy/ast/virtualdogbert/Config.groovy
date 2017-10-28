@@ -36,6 +36,6 @@ import java.lang.annotation.Target
 @GroovyASTTransformationClass("ast.virtualdogbert.ConfigASTTransformation")
 public @interface Config {
     String value()
-    boolean stat() default false
+    boolean fixed() default false
 
 }

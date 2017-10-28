@@ -54,7 +54,7 @@ public class ConfigASTTransformation extends AbstractASTTransformation {
         String configPath = annotationNode?.getMember('value')?.getText()
         addGrailsApplication(fieldNode)
 
-        if (((ConstantExpression) annotationNode?.getMember('stat'))?.value) {
+        if (((ConstantExpression) annotationNode?.getMember('fixed'))?.value) {
             addAnnotation(fieldNode, configPath, defaultValue)
         } else {
             addGetConfig(fieldNode, configPath, defaultValue)

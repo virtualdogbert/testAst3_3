@@ -1,12 +1,17 @@
 package testast
 
 import ast.virtualdogbert.Config
+import com.security.Sprocket
+import com.security.TestService
 import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
 
 @Secured("permitAll")
 class TestController {
-    @Config(value = 'test.number', stat = true)
+    TestService testService
+
+
+    @Config(value = 'test.number', fixed = true)
     Integer test = 6
 
     @Config('test.number')
