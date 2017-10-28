@@ -34,4 +34,9 @@ class TestController {
 
         ] as JSON)
     }
+
+    def test(){
+        Sprocket sprocket = Sprocket.get(1)
+        testService.getSprocket(sprocket)
+    }
 }

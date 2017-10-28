@@ -22,12 +22,14 @@ package com.security
 import ast.virtualdogbert.EnforcerException
 import grails.transaction.Transactional
 import grails.util.Environment
+import groovy.transform.CompileDynamic
 
 /**
  * The EnforcerService has one enforce method for enforcing business rules, and is extended by the traits it implements.
  */
+
 @Transactional
-class EnforcerService implements RoleTrait,DomainRoleTrait{
+class EnforcerService implements RoleTrait,DomainRoleTrait, CreatorTrait{
 
     def grailsApplication
     def springSecurityService

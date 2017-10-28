@@ -20,9 +20,6 @@
 package com.security
 
 import ast.virtualdogbert.Enforce
-import ast.virtualdogbert.MockDomains
-
-
 /**
  * This trait is for the EnforcerService, extending it's capability to enforcing domain roles, without the verbosity of calling a service.
  */
@@ -41,7 +38,6 @@ trait DomainRoleTrait {
          *            viewer: ['viewer']
          *  ]
          */
-    @MockDomains
     boolean hasDomainRole(String role, domainObject, User user = null) {
         if (!user) {
             user = springSecurityService.currentUser
@@ -59,21 +55,21 @@ trait DomainRoleTrait {
         domainRole?.role in roleHierarchy[role]
     }
 
-    /**
-         * This method checks the domain object to see if it has a reference to a user(passed in or defaulted to springSecurityService.currentUser)
-         * This makes it so that the original creator of an object can add permissions to that object.
-         *
-         * @param domainObject The domain object to check for a user reference domainObject.creator
-         * @param user  the user(defaulted to springSecurityService.currentUser) to compare to domainObject.creator
-         * @return true if the user is the same as the creator user reference, false otherwise
-         */
-    Boolean isCreator(domainObject, user = null) {
-        if (!user) {
-            user = springSecurityService.currentUser
-        }
-
-        domainObject.creator.id == user.id
-    }
+//    /**
+//         * This method checks the domain object to see if it has a reference to a user(passed in or defaulted to springSecurityService.currentUser)
+//         * This makes it so that the original creator of an object can add permissions to that object.
+//         *
+//         * @param domainObject The domain object to check for a user reference domainObject.creator
+//         * @param user  the user(defaulted to springSecurityService.currentUser) to compare to domainObject.creator
+//         * @return true if the user is the same as the creator user reference, false otherwise
+//         */
+//    Boolean isCreator(domainObject, user = null) {
+//        if (!user) {
+//            user = springSecurityService.currentUser
+//        }
+//
+//        domainObject.creator.id == user.id
+//    }
 
     /**
          * This method changes the DomainRole of a domainObject for a user, and creates one if one doesn't exist.
