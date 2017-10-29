@@ -21,16 +21,33 @@ package com.security
 
 import ast.virtualdogbert.Enforce
 import grails.gorm.transactions.Transactional
+import groovy.transform.CompileDynamic
+
 /**
- * The EnforcerService has one enforce method for enforcing business rules, and is extended by the traits it implements.
+ * @Transactional no longer plays nice with my @enforce AST Transform. If I have then on the same method I get this error:
+ *
+ * Unable to produce AST for this phase due to earlier compilation error:
+ * startup failed:
+ * script1509283741398.groovy: 34: [Static type checking] - The variable [sp] is undeclared.
+ *  @ line 34, column 25.
+ *       @Enforce({isCreator(sp)})
+ *                          ^
+ *
+ * script1509283741398.groovy: 34: [Static type checking] - Cannot find matching method com.security.TestService#isCreator(java.lang.Object). Please check if the declared type is right and if the method exists.
+ * @ line 34, column 15.
+ *        @Enforce({isCreator(sp)})
+ *
+ *  Works in Grails 3.0.17 and 3.2.4, with or without the @CompileStatic.
+ *  The only way I can get it to work with Grails 3.3(Gorm 6.1) is to add @CompileDynamic, which I shouldn't have to.
  */
-//@Transactional
+@Transactional
+//@CompileStatic
+class TestService{
 
-class TestService implements RoleTrait, DomainRoleTrait, CreatorTrait {
-
-    @Transactional
-    @Enforce({isCreator(sprocket)})
-    Sprocket getSprocket(Sprocket sprocket) {
-        return sprocket
+//@CompileStatic
+@CompileDynamic
+    @Enforce({isCreator(sp)})
+    Sprocket getSprocket(Sprocket sp) {
+        return sp
     }
 }

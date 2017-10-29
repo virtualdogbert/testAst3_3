@@ -17,21 +17,23 @@
  *  under the License.
  */
 
-package com.security
 /**
- * This trait is for the EnforcerService, extending it's capability to enforcing domain roles, without the verbosity of calling a service.
+ * This allows intellij to resolve Enforcer service calls from the @Enforce annotation
  */
-trait CreatorTrait {
-    def springSecurityService
+contributor(context(scope: closureScope(annotationName: "ast.virtualdogbert.Enforce"))) {
+    delegatesTo(findClass('com.security.EnforcerService'))
+}
 
+/**
+ * This allows intellij to resolve Enforcer service calls from the @Reinforce annotation
+ */
+contributor(context(scope: closureScope(annotationName: "ast.virtualdogbert.Reinforce"))) {
+    delegatesTo(findClass('com.security.EnforcerService'))
+}
 
-
-    Boolean isCreator(Sprocket domainObject, User user = null) {
-        if (!user) {
-            return domainObject.creator == springSecurityService.currentUser
-        }
-
-        domainObject.creator.id == user.id
-    }
-
+/**
+ * This allows intellij to resolve Enforcer service calls from the @ReinforceFilter annotation
+ */
+contributor(context(scope: closureScope(annotationName: "ast.virtualdogbert.ReinforceFilter"))) {
+    delegatesTo(findClass('com.security.EnforcerService'))
 }
