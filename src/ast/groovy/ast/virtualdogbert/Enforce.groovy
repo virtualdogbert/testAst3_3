@@ -24,6 +24,7 @@
 package ast.virtualdogbert
 
 import org.codehaus.groovy.transform.GroovyASTTransformationClass
+import org.grails.datastore.gorm.transform.GormASTTransformationClass
 
 import java.lang.annotation.ElementType
 import java.lang.annotation.Retention
@@ -51,7 +52,8 @@ import java.lang.annotation.Target
  */
 @Retention(RetentionPolicy.SOURCE)
 @Target([ElementType.TYPE, ElementType.METHOD])
-@GroovyASTTransformationClass("ast.virtualdogbert.EnforceASTTransformation")
+@GroovyASTTransformationClass("org.grails.datastore.gorm.transform.OrderedGormTransformation")
+@GormASTTransformationClass("ast.virtualdogbert.EnforceASTTransformation")
 public @interface Enforce {
     Class value()
     Class failure() default {false}

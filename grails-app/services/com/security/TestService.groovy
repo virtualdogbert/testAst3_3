@@ -20,9 +20,7 @@
 package com.security
 
 import ast.virtualdogbert.Enforce
-import grails.gorm.transactions.Transactional
-import groovy.transform.CompileDynamic
-
+import groovy.transform.CompileStatic
 /**
  * @Transactional no longer plays nice with my @enforce AST Transform. If I have then on the same method I get this error:
  *
@@ -40,12 +38,12 @@ import groovy.transform.CompileDynamic
  *  Works in Grails 3.0.17 and 3.2.4, with or without the @CompileStatic.
  *  The only way I can get it to work with Grails 3.3(Gorm 6.1) is to add @CompileDynamic, which I shouldn't have to.
  */
-@Transactional
+//@Transactional
 //@CompileStatic
 class TestService{
 
-//@CompileStatic
-@CompileDynamic
+@CompileStatic
+//@CompileDynamic
     @Enforce({isCreator(sp)})
     Sprocket getSprocket(Sprocket sp) {
         return sp
