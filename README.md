@@ -20,10 +20,10 @@ AST Transform Disadvantages
 What is an ast transform?
 ----
 
-http://docs.groovy-lang.org/latest/html/documentation/#_compile_time_metaprogramming
-http://docs.groovy-lang.org/latest/html/gapi/org/codehaus/groovy/ast/tools/package-summary.html
-http://docs.grails.org/latest/api/org/grails/compiler/injection/GrailsASTUtils.html
-http://www.sdidit.nl/2013/01/groovy-ast-writing-annotation.html
+* http://docs.groovy-lang.org/latest/html/documentation/#_compile_time_metaprogramming
+* http://docs.groovy-lang.org/latest/html/gapi/org/codehaus/groovy/ast/tools/package-summary.html
+* http://docs.grails.org/latest/api/org/grails/compiler/injection/GrailsASTUtils.html
+* http://www.sdidit.nl/2013/01/groovy-ast-writing-annotation.html
 
 
 When you write code you have a bunch of files just containing text, When you use the Groovy Compiler the compiler processes that text using a parser Called Antlr, converting the text to an abstract syntax tree. The Groovy compiler has several phases where that abstract syntax tree is transformed, untill it becomes it's final byte code output.
@@ -89,10 +89,10 @@ Lets Take a look at and AST Transform(Config, adding a property and a method)
 
 GDSL
 ----
-http://www.tothenew.com/blog/gdsl-awesomeness-introduction-to-gdsl-in-intellij-idea/
-https://confluence.jetbrains.com/display/GRVY/Scripting+IDE+for+DSL+awareness 
-https://intellij-support.jetbrains.com/hc/en-us/community/posts/203366410-Can-I-use-GDSL-with-Groovy-AST-transforms-that-have-closures-as-parameters-
+* http://www.tothenew.com/blog/gdsl-awesomeness-introduction-to-gdsl-in-intellij-idea/
+* https://confluence.jetbrains.com/display/GRVY/Scripting+IDE+for+DSL+awareness 
+* https://intellij-support.jetbrains.com/hc/en-us/community/posts/203366410-Can-I-use-GDSL-with-Groovy-AST-transforms-that-have-closures-as-parameters-
 
 Macro methods(future?)
 ----
-http://docs.groovy-lang.org/next/html/documentation/#_macros
+* http://docs.groovy-lang.org/next/html/documentation/#_macros
