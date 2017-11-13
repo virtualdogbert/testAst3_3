@@ -68,9 +68,9 @@ Lets Take a look at and AST Transform(Config, adding a property and a method)
         * method
         * field
         
-    Nodes
-    Statements
-    Expressions
+    * Nodes
+    * Statements
+    * Expressions
     
     * groovyConsole
     
