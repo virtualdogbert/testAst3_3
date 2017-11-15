@@ -1,7 +1,7 @@
 Groovy Compile-time Meta-programming Magic's Biggest Secrets Finally Revealed!
 ----
 
-Last time I gave a talk I showed you, that Meta programming was just another trick, and I showed you how it worked. Tonight I'm going to try to go once step beyon and show you the tricks behind compile-time meta-programming. So that once again you'll see it as another way of programming, rather than magic. However compile-time meta programing, is not for the faint of heart. It's used mainly by the maintainers of Groovy, Groovy related frameworks, and plugin/library designers. I've writen about a dozzen AST Transforms, and I don't consider myself an expert, and you may very well, have questions that I can't answer, however I'm going to share with you my expirence.
+Last time I gave a talk I showed you, that Meta programming was just another trick, and I showed you how it worked. Tonight I'm going to try to go once step beyond and show you the tricks behind compile-time meta-programming. So that once again you'll see it as another way of programming, rather than magic. However compile-time meta programing, is not for the faint of heart. It's used mainly by the maintainers of Groovy, Groovy related frameworks, and plugin/library designers. I've writen about a dozzen AST Transforms, and I don't consider myself an expert, and you may very well, have questions that I can't answer, however I'm going to share with you my expirence.
 
 AST Transforms Advantages
 * No run-time performance penalties like runtime-meta programming
