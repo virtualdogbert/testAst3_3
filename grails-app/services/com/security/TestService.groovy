@@ -20,7 +20,6 @@
 package com.security
 
 import ast.virtualdogbert.Enforce
-import groovy.transform.CompileStatic
 /**
  * @Transactional no longer plays nice with my @enforce AST Transform. If I have then on the same method I get this error:
  *
@@ -42,7 +41,7 @@ import groovy.transform.CompileStatic
 //@CompileStatic
 class TestService{
 
-@CompileStatic
+//@CompileStatic  //compile static conflicts with Enforce in grails 3.3.x
 //@CompileDynamic
     @Enforce({isCreator(sp)})
     Sprocket getSprocket(Sprocket sp) {
