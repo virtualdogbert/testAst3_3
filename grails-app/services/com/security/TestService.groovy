@@ -19,18 +19,33 @@
 
 package com.security
 
-import ast.virtualdogbert.Enforce
+import ast.virtualdogbert.Params
 import grails.gorm.transactions.Transactional
+import org.springframework.transaction.annotation.Isolation
+
 /**
  * The EnforcerService has one enforce method for enforcing business rules, and is extended by the traits it implements.
  */
-//@Transactional
-
+@Transactional
 class TestService implements RoleTrait, DomainRoleTrait, CreatorTrait {
 
     @Transactional
-    @Enforce({isCreator(sprocket)})
+    //@Enforce({isCreator(sprocket)})
     Sprocket getSprocket(Sprocket sprocket) {
         return sprocket
+    }
+
+    @Params(
+            value = 'something',
+            success = {false},
+            isolation = Isolation.DEFAULT,
+            timeout = -1,
+            readOnly = false,
+            emptyList = [],
+            listOfString = ["one", "two", "three"],
+            listOfLong = [1L, 2L, 3L]
+    )
+    def testParamsAnnotation(){
+
     }
 }
