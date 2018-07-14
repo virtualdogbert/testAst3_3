@@ -25,6 +25,7 @@ class TestController {
 
     //@ErrorsHandler
     def index(int i) {
+        this.validate()
         render ([
                 i:i,
                 test1: test,
