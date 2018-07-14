@@ -46,7 +46,7 @@ class ParamsASTTransformation extends AbstractASTTransformation {
         MethodNode methodNode = (MethodNode) nodes[1]
 
 
-        AnnotationNode annotationNode = methodNode.getAnnotations(beforeNode)[0]
+        AnnotationNode annotationNode = (AnnotationNode)nodes[0]
         String configPath = annotationNode?.getMember('value')?.getText()
         annotationNode?.getMember('fixed')
 
