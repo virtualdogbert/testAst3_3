@@ -35,7 +35,7 @@ import java.lang.annotation.Target
 @interface Params {
     String value() default 'test'
 
-    Class success() default { true }
+    Class success() default { true }//closure
 
     Isolation isolation() default Isolation.DEFAULT
 

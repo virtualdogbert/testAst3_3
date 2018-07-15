@@ -38,10 +38,10 @@ import org.codehaus.groovy.transform.GroovyASTTransformation
  */
 @CompileStatic
 @GroovyASTTransformation(phase = CompilePhase.SEMANTIC_ANALYSIS)
-public class ErrorsHandlerASTTransformation extends AbstractASTTransformation {
+class ErrorsHandlerASTTransformation extends AbstractASTTransformation {
 
     @Override
-    public void visit(ASTNode[] nodes, SourceUnit sourceUnit) {
+    void visit(ASTNode[] nodes, SourceUnit sourceUnit) {
         if (nodes.length != 2) return
         ClassNode beforeNode = new ClassNode(ErrorsHandler.class)
 

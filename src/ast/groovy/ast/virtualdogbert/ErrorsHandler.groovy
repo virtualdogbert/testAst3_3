@@ -34,6 +34,6 @@ import java.lang.annotation.Target
 @Retention(RetentionPolicy.SOURCE)
 @Target([ElementType.TYPE, ElementType.METHOD])
 @GroovyASTTransformationClass("ast.virtualdogbert.ErrorsHandlerASTTransformation")
-public @interface ErrorsHandler {
+@interface ErrorsHandler {
     String handler() default "errorsHandler"
 }
